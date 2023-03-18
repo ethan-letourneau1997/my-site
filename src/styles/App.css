@@ -13,6 +13,14 @@
   font-size: var(--font-size-base);
 }
 
+.loading-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .italic {
   font-style: italic;
   font-weight: 300;
@@ -144,6 +152,7 @@ h1 span {
 
 .Projects {
   background-color: transparent;
+  padding-bottom: 20vh;
 }
 h2 {
   font-size: var(--font-size-xxl);

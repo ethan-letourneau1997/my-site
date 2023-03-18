@@ -12,6 +12,8 @@ import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 
+import ReactLoading from "react-loading";
+
 import "./styles/App.css";
 import "./styles/App-light.css";
 import "./styles/App-dark.css";
@@ -21,6 +23,21 @@ function App() {
   const particlesInit = useCallback((main) => {
     loadFull(main);
   }, []);
+
+  // State for loading animation
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Load your components here
+    // When the loading is complete, set isLoading to false
+    setIsLoading(false);
+  }, []);
+
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+  //     }, 4000); // set a delay of 3 seconds
+  //   }, []);
 
   //  Toggle dark and light theme
 
@@ -51,63 +68,74 @@ function App() {
 
   return (
     <div className={`App ${isDarkTheme ? "dark-theme" : "light-theme"}`}>
-      <div className="p-wrapper">
-        <Particles
-          options={particlesOptions}
-          init={particlesInit}
-          //   fullscreen={false}
-        />
-        <Container fluid className="content-wrapper">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </Container>
-      </div>
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-
-        <Navbar
-          collapseOnSelect
-          expand="lg"
-          bg="dark"
-          variant="light"
-          id="navbar"
-          className={visible ? "navbar-visible" : "navbar-hidden"}
-        >
-          <Container fluid>
-            <Navbar.Brand href="#home">Ethan Letourneau</Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse
-              id="responsive-navbar-nav"
-              className="justify-content-between"
-            >
-              <Nav>
-                <Nav.Link href="#features">
-                  <Link to="/">Home</Link>
-                </Nav.Link>
-                <Nav.Link href="#features">
-                  <span>Projects</span>{" "}
-                </Nav.Link>
-                <Nav.Link href="#pricing">
-                  <Link to="/about">About</Link>
-                </Nav.Link>
-              </Nav>
-              <div className="lg-px-3 d-flex align-items-center gap-2">
-                <span>{isDarkTheme ? "dark" : "light"}</span>
-                <ReactSwitch
-                  onChange={handleToggleTheme}
-                  checked={isDarkTheme}
-                  onColor="#222"
-                  offColor="#aaa"
-                  checkedIcon={false}
-                  uncheckedIcon={false}
-                />
-              </div>
-            </Navbar.Collapse>
+      <div>
+        {isLoading ? (
+          <Container fluid className="loading-screen">
+            <ReactLoading type={"bars"} color={"#fff"} height={70} width={70} />
           </Container>
-        </Navbar>
-      </header>
+        ) : (
+          // Render your components here
+          <>
+            <div className="p-wrapper">
+              <Particles
+                options={particlesOptions}
+                init={particlesInit}
+                //   fullscreen={false}
+              />
+              <Container fluid className="content-wrapper">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                </Routes>
+              </Container>
+            </div>
+            <header className="App-header">
+              {/* <img src={logo} className="App-logo" alt="logo" /> */}
+
+              <Navbar
+                collapseOnSelect
+                expand="lg"
+                bg="dark"
+                variant="light"
+                id="navbar"
+                className={visible ? "navbar-visible" : "navbar-hidden"}
+              >
+                <Container fluid>
+                  <Navbar.Brand href="#home">Ethan Letourneau</Navbar.Brand>
+                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                  <Navbar.Collapse
+                    id="responsive-navbar-nav"
+                    className="justify-content-between"
+                  >
+                    <Nav>
+                      <Nav.Link href="#features">
+                        <Link to="/">Home</Link>
+                      </Nav.Link>
+                      <Nav.Link href="#features">
+                        <span>Projects</span>{" "}
+                      </Nav.Link>
+                      <Nav.Link href="#pricing">
+                        <Link to="/about">About</Link>
+                      </Nav.Link>
+                    </Nav>
+                    <div className="lg-px-3 d-flex align-items-center gap-2">
+                      <span>{isDarkTheme ? "dark" : "light"}</span>
+                      <ReactSwitch
+                        onChange={handleToggleTheme}
+                        checked={isDarkTheme}
+                        onColor="#222"
+                        offColor="#aaa"
+                        checkedIcon={false}
+                        uncheckedIcon={false}
+                      />
+                    </div>
+                  </Navbar.Collapse>
+                </Container>
+              </Navbar>
+            </header>
+          </>
+        )}
+      </div>
     </div>
   );
 }

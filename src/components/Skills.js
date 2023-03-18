@@ -18,7 +18,7 @@ function Skills() {
         Math.min(distanceFromTop, window.innerHeight)
       );
       const percentageFromTop = distanceFromTopClamped / window.innerHeight;
-      setBackgroundColor(`rgba(3, 5, 7, ${percentageFromTop * 0.9})`);
+      setBackgroundColor(`rgba(3, 5, 7, ${percentageFromTop * 0.7})`);
     };
 
     window.addEventListener("scroll", handleScroll);
