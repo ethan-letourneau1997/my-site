@@ -1,0 +1,146 @@
+/* DARK THEME PALETTE */
+:root {
+  --blue: #7ca5f8;
+  --red: hsl(10, 85%, 64%);
+  --green: hsl(161, 54%, 61%);
+  --yellow: hsl(65, 83%, 77%);
+  --txt-secondary: hsl(210, 17%, 80%);
+  --txt-primary: #fff;
+}
+
+/* COLOR CLASSES */
+
+.dark-theme {
+  color: var(--txt-primary);
+}
+
+.dark-theme .txt-prim {
+  color: var(--txt-primary) !important;
+}
+
+.dark-theme .txt-sec {
+  color: var(--txt-secondary);
+}
+
+.dark-theme .acc-blue {
+  color: var(--blue) !important;
+}
+.dark-theme .acc-red {
+  color: var(--red);
+}
+.dark-theme .acc-green {
+  color: var(--green);
+}
+.dark-theme .acc-yellow {
+  color: var(--yellow);
+}
+
+.dark-theme h4 {
+  color: green;
+}
+
+.dark-theme .card .hr {
+  color: rgba(255, 255, 255, 0.257);
+}
+
+/* APP CLASS */
+.dark-theme {
+  /* background: linear-gradient(to bottom right, #030507, hsl(224, 27%, 8%)); */
+  /* background: url("../images/svg/polygon2.svg"); */
+  /* background-color: #030507; */
+}
+
+/* NAVBAR */
+
+.dark-theme .navbar {
+  background-color: transparent !important;
+  /* background-color: #030507 !important;
+  background: linear-gradient(
+    to bottom right,
+    #030507,
+    hsl(224, 27%, 8%)
+  ) !important; */
+  border-color: transparent;
+}
+
+.dark-theme .navbar span {
+  color: var(--txt-secondary);
+}
+
+/* CARD */
+
+.dark-theme .card {
+  background-color: var(--foreground) !important;
+  background: #14171f;
+  background: linear-gradient(
+    45deg,
+    hsla(224, 22%, 10%, 1) 69%,
+    hsla(220, 21%, 14%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    45deg,
+    hsla(224, 22%, 10%, 1) 69%,
+    hsla(220, 21%, 14%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(224, 22%, 10%, 1) 69%,
+    hsla(220, 21%, 14%, 1) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14171F", endColorstr="#1C212B", GradientType=1 );
+}
+
+.dark-theme .web-card .card-title {
+  color: var(--red);
+}
+.dark-theme .code-card .card-title {
+  color: var(--green);
+}
+.dark-theme .data-card .card-title {
+  color: var(--yellow);
+}
+
+.dark-theme .header-name {
+  color: var(--blue);
+}
+
+.dark-theme .navbar-brand {
+  color: var(--blue) !important;
+}
+
+.navbar-visible {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.navbar-hidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Skills */
+.dark-theme .Skills {
+  /* background-color: rgb(3, 5, 7); */
+  /* background: linear-gradient(to bottom, hsl(210, 40%, 2%), hsl(210, 40%, 4%)); */
+}
+
+.Projects {
+  background-color: rgb(3, 5, 7);
+}
+
+/* About */
+
+.About {
+  color: white !important;
+}

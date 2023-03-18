@@ -1,0 +1,26 @@
+:root {
+  --background: #f1f2f0;
+  /* --blue: hsl(220, 90%, 73%); */
+  --blue: #7ca5f8;
+  --red: #f16f55;
+  --green: #66d1af;
+  --yellow: #edf594;
+  --txt-secondary: hsl(210, 17%, 80%);
+  --txt-primary: #ffffff;
+}
+
+.light-theme {
+  background-color: var(--background);
+}
+
+.light-theme .header-name {
+  color: hsl(220, 90%, 60%);
+}
+
+/* NAVBAR */
+
+.light-theme .navbar {
+  background-color: hsl(220, 90%, 60%) !important;
+  background-color: transparent !important;
+  border-color: transparent;
+}
