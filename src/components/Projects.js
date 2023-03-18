@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
 import marchMadnessIpad from "../images/png/march-madness-horizontal-ipad.png";

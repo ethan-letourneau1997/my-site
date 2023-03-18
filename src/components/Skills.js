@@ -1,7 +1,6 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 import checkBox from "../images/png/checkbox.png";
-import Projects from "./Projects";
 
 function Skills() {
   //   Fade in background color on scroll

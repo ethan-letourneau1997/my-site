@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { Container, Row, Button } from "react-bootstrap";
-import checkBox from "../images/png/checkbox.png";
 import Projects from "./Projects";
 import Skills from "./Skills";
 
